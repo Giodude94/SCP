@@ -5,24 +5,24 @@ using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(MaterialSetter))]
-[RequireComponent(typeof(IObjectTweener1))]
+[RequireComponent(typeof(IObjectTweener))]
 public abstract class Piece : MonoBehaviour
 {
-	[SerializeField] private MaterialSetter materialSetter;
+	/*[SerializeField] */private MaterialSetter materialSetter;
 	public Board board { protected get; set; }
 	public Vector2Int occupiedSquare { get; set; }
 	public TeamColor team { get; set; }
 	public bool hasMoved { get; private set; }
 	public List<Vector2Int> avaliableMoves;
 
-	private IObjectTweener1 tweener;
+	private IObjectTweener tweener;
 
 	public abstract List<Vector2Int> SelectAvaliableSquares();
 
 	private void Awake()
 	{
 		avaliableMoves = new List<Vector2Int>();
-		tweener = GetComponent<IObjectTweener1>();
+		tweener = GetComponent<IObjectTweener>();
 		materialSetter = GetComponent<MaterialSetter>();
 		hasMoved = false;
 	}
@@ -44,7 +44,10 @@ public abstract class Piece : MonoBehaviour
 
 	public virtual void MovePiece(Vector2Int coords)
 	{
-		return; 
+		Vector3 targetPosition = board.CalculatePositionFromCoords(coords);
+		occupiedSquare = coords;
+		hasMoved = true;
+		tweener.MoveTo(transform, targetPosition);
 	}
 
 

@@ -7,6 +7,8 @@ public class King : Piece
 {
     public override List<Vector2Int> SelectAvaliableSquares()
     {
-        throw new NotImplementedException();
+        avaliableMoves.Clear();
+        avaliableMoves.Add(occupiedSquare + new Vector2Int(0, 1));
+        return avaliableMoves;
     }
 }

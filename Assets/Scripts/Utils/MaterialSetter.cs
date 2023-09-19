@@ -6,9 +6,9 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer))]
 public class MaterialSetter : MonoBehaviour
 {
-	[SerializeField] private MeshRenderer _meshRenderer;
-	private MeshRenderer meshRenderer
-	{
+	/*[SerializeField]*/ private MeshRenderer _meshRenderer;
+    private MeshRenderer MeshRenderer
+    {
 		get
 		{
 			if (_meshRenderer == null)
@@ -19,6 +19,6 @@ public class MaterialSetter : MonoBehaviour
 
 	public void SetSingleMaterial(Material material)
 	{
-		meshRenderer.material = material;
+		MeshRenderer.material = material;
 	}
 }

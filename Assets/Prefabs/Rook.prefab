@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3387380}
   - component: {fileID: 2369410}
   - component: {fileID: 8872490640073340559}
-  - component: {fileID: -8380725176662962506}
-  - component: {fileID: 7412544041833814218}
+  - component: {fileID: 6898501579435076221}
+  - component: {fileID: 386183645714429951}
   m_Layer: 0
   m_Name: Rook
   m_TagString: Untagged
@@ -98,8 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22699b785a28cba46837911c1d5100d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _meshRenderer: {fileID: 0}
---- !u!114 &-8380725176662962506
+--- !u!114 &6898501579435076221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,10 +107,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 125018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 997b4b292ac338a448fc917f9d381474, type: 3}
+  m_Script: {fileID: 11500000, guid: eabc71a7268eb7c4f9cecbcce40ffe89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7412544041833814218
+--- !u!114 &386183645714429951
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,5 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038127952c309d241ac83fc62b81aa8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialSetter: {fileID: 0}
   avaliableMoves: []

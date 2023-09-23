@@ -46,8 +46,8 @@ public class Board : MonoBehaviour
     internal void OnSquareSelected(Vector3 inputPosition)
     {
         Vector2Int coords = CalculateCoordsFromPosition(inputPosition);
-        Piece piece  = GetPieceOnSquare(coords);
-        if (selectedPiece) 
+        Piece piece = GetPieceOnSquare(coords);
+        if (selectedPiece)
         {
             if (piece != null && selectedPiece == piece)
                 DeselectPiece();
@@ -85,7 +85,7 @@ public class Board : MonoBehaviour
 
     private void SelectPiece(Piece piece)
     {
-        selectedPiece = piece;  
+        selectedPiece = piece;
 
     }
 
@@ -94,28 +94,30 @@ public class Board : MonoBehaviour
         selectedPiece = null;
     }
 
-    private Piece GetPieceOnSquare(Vector2Int coords)
+    public Piece GetPieceOnSquare(Vector2Int coords)
     {
         if (CheckifCoordinatesAreOnBoard(coords))
             return grid[coords.x, coords.y];
         return null;
     }
 
-    private bool CheckifCoordinatesAreOnBoard(Vector2Int coords)
+    public bool CheckifCoordinatesAreOnBoard(Vector2Int coords)
     {
         if (coords.x < 0 || coords.y < 0 || coords.x >= BOARD_SIZE || coords.y >= BOARD_SIZE)
-            return true;
-        return false;
+            return false;
+        return true;
     }
 
     public bool HasPiece(Piece piece)
     {
-        for (int i = 0; i < BOARD_SIZE; i++) {
-            for (int j = 0; j < BOARD_SIZE; j++) {
-                if (grid[i, j] == piece) ;
+        for (int i = 0; i < BOARD_SIZE; i++)
+        {
+            for (int j = 0; j < BOARD_SIZE; j++)
+            {
+                if (grid[i, j] == piece)
                     return true;
             }
-        } 
+        }
         return false;
     }
 

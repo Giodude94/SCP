@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 470440}
   - component: {fileID: 3339302}
   - component: {fileID: 2398162}
-  - component: {fileID: 7248656486441958120}
-  - component: {fileID: -8987948481384086893}
-  - component: {fileID: -1346491314509658444}
+  - component: {fileID: -4156850870114010234}
+  - component: {fileID: 5862765513629776282}
+  - component: {fileID: 347718251028851967}
   m_Layer: 0
   m_Name: Bishop
   m_TagString: Untagged
@@ -86,33 +86,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7248656486441958120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22699b785a28cba46837911c1d5100d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-8987948481384086893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e77c07a04add576418b3ed4dce1c1032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  materialSetter: {fileID: 0}
-  avaliableMoves: []
---- !u!114 &-1346491314509658444
+--- !u!114 &-4156850870114010234
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,3 +98,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabc71a7268eb7c4f9cecbcce40ffe89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5862765513629776282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22699b785a28cba46837911c1d5100d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &347718251028851967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77c07a04add576418b3ed4dce1c1032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avaliableMoves: []

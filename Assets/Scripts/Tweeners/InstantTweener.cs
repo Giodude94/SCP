@@ -6,6 +6,7 @@ public class InstantTweener : MonoBehaviour, IObjectTweener
 {
     public void MoveTo(Transform transform, Vector3 targetPosition)
     {
+        Debug.Log("Test");
         transform.position = targetPosition;
     }
 }

@@ -5,24 +5,24 @@ using UnityEngine;
 public class Queen : Piece
 {
     private Vector2Int[] directions = new Vector2Int[]
-   {
-       new Vector2Int(1,1),
-       new Vector2Int(1,-1),
-       new Vector2Int(-1,1),
-       new Vector2Int(-1,-1),
-       Vector2Int.left,
-       Vector2Int.up,
-       Vector2Int.right,
-       Vector2Int.down
-   };
-
+    {
+        Vector2Int.left,
+        Vector2Int.up,
+        Vector2Int.right,
+        Vector2Int.down,
+        new Vector2Int(1, 1),
+        new Vector2Int(1, -1),
+        new Vector2Int(-1, 1),
+        new Vector2Int(-1,- 1),
+    };
     public override List<Vector2Int> SelectAvaliableSquares()
     {
         avaliableMoves.Clear();
+
         float range = Board.BOARD_SIZE;
         foreach (var direction in directions)
         {
-            for (int i = 0; i <= range; i++)
+            for (int i = 1; i <= range; i++)
             {
                 Vector2Int nextCoords = occupiedSquare + direction * i;
                 Piece piece = board.GetPieceOnSquare(nextCoords);
@@ -42,4 +42,3 @@ public class Queen : Piece
         return avaliableMoves;
     }
 }
-

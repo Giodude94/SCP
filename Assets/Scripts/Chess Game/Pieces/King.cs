@@ -7,22 +7,23 @@ public class King : Piece
 {
     Vector2Int[] directions = new Vector2Int[]
     {
-        new Vector2Int(-1,1),
-        new Vector2Int(0,1),
-        new Vector2Int(1,1),
-        new Vector2Int(-1,0),
-        new Vector2Int(1,0),
-        new Vector2Int(-1,-1),
-        new Vector2Int(0,-1),
-        new Vector2Int(1,-1),
-};
+        new Vector2Int(-1, 1),
+        new Vector2Int(0, 1),
+        new Vector2Int(1, 1),
+        new Vector2Int(-1, 0),
+        new Vector2Int(1, 0),
+        new Vector2Int(-1, -1),
+        new Vector2Int(0, -1),
+        new Vector2Int(1, -1),
+    };
+
     public override List<Vector2Int> SelectAvaliableSquares()
     {
         avaliableMoves.Clear();
         float range = 1;
         foreach (var direction in directions)
         {
-            for (int i = 0; i <= range; i++)
+            for (int i = 1; i <= range; i++)
             {
                 Vector2Int nextCoords = occupiedSquare + direction * i;
                 Piece piece = board.GetPieceOnSquare(nextCoords);
@@ -40,5 +41,7 @@ public class King : Piece
             }
         }
         return avaliableMoves;
+
     }
+
 }

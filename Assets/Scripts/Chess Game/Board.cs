@@ -14,9 +14,11 @@ public class Board : MonoBehaviour
     private Piece[,] grid;
     private Piece selectedPiece;
     private ChessGameController chessController;
+    private SquareSelectorCreator squareSelector;
 
     private void Awake()
     {
+        squareSelector = GetComponent<SquareSelectorCreator>();
         CreateGrid();
     }
 
@@ -86,12 +88,27 @@ public class Board : MonoBehaviour
     private void SelectPiece(Piece piece)
     {
         selectedPiece = piece;
+        List<Vector2Int> selection = selectedPiece.avaliableMoves;
+        ShowSelectionSquares(selection);
 
+    }
+    private void ShowSelectionSquares(List<Vector2Int> selection)
+    {
+        Dictionary<Vector3, bool> squaresData = new Dictionary<Vector3, bool>();
+        for (int i = 0; i < selection.Count; i++)
+        {
+            Vector3 position = CalculatePositionFromCoords(selection[i]);
+            bool bIsSquareFree = GetPieceOnSquare(selection[i]) == null;
+            squaresData.Add(position, bIsSquareFree);
+
+        }
+        squareSelector.ShowSelection(squaresData);
     }
 
     private void DeselectPiece()
     {
         selectedPiece = null;
+        squareSelector.ClearSelection();
     }
 
     public Piece GetPieceOnSquare(Vector2Int coords)
@@ -126,4 +143,5 @@ public class Board : MonoBehaviour
         if (CheckifCoordinatesAreOnBoard(coords))
             grid[coords.x, coords.y] = piece;
     }
+
 }
